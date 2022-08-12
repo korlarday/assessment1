@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import './App.scss';
+import Header from './components/header/Header';
+import { library } from "@fortawesome/fontawesome-svg-core";
+// import { times } from "@fortawesome/free-brands-svg-icons";
+import { faCoffee, faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
+import Home from './components/home/Home';
+import Ranking from "./components/ranking/Ranking";
+import { useState } from 'react';
+
+library.add(faTimes, faBars, faCoffee); 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Router>
+      <Header />
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path="/hotel-ranking">
+        <Ranking />
+      </Route>
+    </Router>
+    </>
   );
 }
 
