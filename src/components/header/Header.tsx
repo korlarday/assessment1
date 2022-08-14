@@ -4,32 +4,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-    const [burgerStatus, setBurgerStatus] = useState(false);
-    let location = window.location.pathname;
-    useEffect(() => {
-        console.log('location',window.location.pathname);
-    }, [location])
+  const [burgerStatus, setBurgerStatus] = useState(false);
+  let location = window.location.pathname;
+  useEffect(() => {}, [location]);
   return (
     <div className="header-container">
-      <a href="#/">
-        Hotel Ranking
-        {/* <img src="/images/logo.svg" /> */}
-      </a>
+      <Link to="/">Hotel Ranking</Link>
 
       <div className="menu">
-        <a href="#/" className="navStyle">
-          {/* Hotel Ranking */}
-        </a>
+        <Link to="/hotel-chain" className="navStyle"></Link>
       </div>
 
       <div className="rightMenu">
-        <Link to="/" className="navStyle">
+        <Link to="/" className="navStyle tempMenu">
           Home
         </Link>
-        <Link to="/hotel-ranking" className="navStyle">
+        <Link to="/hotel-ranking" className="navStyle tempMenu">
           Ranking
         </Link>
-        <Link to="/hotel-chain" className="navStyle">
+        <Link to="/hotel-chain" className="navStyle tempMenu">
           Hotel Chain
         </Link>
         <FontAwesomeIcon
@@ -39,7 +32,12 @@ const Header = () => {
         />
       </div>
 
-      <div className="burgerNav" style={{ transform: burgerStatus? 'translateX(0)': 'translateX(100%)'}}>
+      <div
+        className="burgerNav"
+        style={{
+          transform: burgerStatus ? "translateX(0)" : "translateX(100%)",
+        }}
+      >
         <div className="closeWrapper">
           <FontAwesomeIcon
             icon="times"
@@ -47,14 +45,16 @@ const Header = () => {
           />
         </div>
         <li>
-          <a href="#/">Hotel Ranking</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="#/">Hotel Chain</a>
+          <Link to="/hotel-ranking">Hotel Ranking</Link>
         </li>
-        
+        <li>
+          <Link to="/hotel-chain">Hotel Chain</Link>
+        </li>
       </div>
-    </div> 
+    </div>
   );
 };
 

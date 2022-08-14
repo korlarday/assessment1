@@ -36,6 +36,12 @@ a.navStyle:hover {
   cursor: pointer;
 }
 
+.center-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @keyframes animateDown {
   0%,
   20%,

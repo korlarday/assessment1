@@ -1,15 +1,17 @@
 
-.ranking-container {
+
+
+.hotelChain-container {
     background-color: rgb(251, 250, 250);
     min-height: 100vh;
-    .filter-menu {
+    .action-menu {
         margin-top: 50px;
         background-color: rgb(225, 224, 224);
         min-height: 70px;
         display: flex;
         align-items: center;
     }
-    .rankingContent {
+    .hotelChainContent {
         width: 100%;
         margin-top: 3rem;
       
@@ -26,8 +28,4 @@
 }
 .multiSelectContainer {
     background-color: white;
-}
-.map-body {
-    min-width: 100%;
-    min-height: 60vh;
 }

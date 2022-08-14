@@ -1,39 +1,32 @@
 import React from "react";
 import "./Home.scss";
-import Fade from 'react-reveal/Fade';
+import Fade from "react-reveal/Fade";
+import { Link } from "react-router-dom";
 function Home() {
-    const image = 'sample_hotel2.jpg';
-    const title = 'Hotel Ranking';
-    const description = 'Hotel Chain'
+  const title = "Hotel Ranking";
+  const description = "Hotel Chain";
   return (
-    <div className="container">
-        <div className="wrapper">
-      <Fade bottom>
-        <div className="itemText">
-          <h1>{title}</h1>
-          <p>{description}</p>
-        </div>
-      </Fade>
-      <div>
+    <div className="home-container">
+      <div className="wrapper">
         <Fade bottom>
-          <div className="buttonGroup">
-            <div className="button">Hotel Ranking</div>
-            <div className="button rightButton">Hotel Chain</div>
+          <div className="itemText">
+            <h1>{title}</h1>
+            <p>{description}</p>
           </div>
         </Fade>
+        <div>
+          <Fade bottom>
+            <div className="buttonGroup">
+              <Link className="button" to="/hotel-ranking">
+                Hotel Ranking
+              </Link>
+              <Link className="button rightButton" to="/hotel-chain">
+                Hotel Chain
+              </Link>
+            </div>
+          </Fade>
+        </div>
       </div>
-    </div>
-
-
-
-      {/* <Section
-        title="Model S"
-        description="Order Online for Touchless Delivery"
-        leftBtnText="Custom order"
-        rightBtnText="Existing inventory"
-        backgroundImg="model-s.jpg"
-      /> */}
-      
     </div>
   );
 }
